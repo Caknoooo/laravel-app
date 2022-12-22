@@ -7,5 +7,5 @@
         <p>{{ $post['body'] }}</p>
     </section>
 
-    <a class="btn btn-primary" href="/blog" role="button">Back</a>
+    <a class="btn btn-primary" href="/posts" role="button">Back</a>
 @endsection
