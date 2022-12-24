@@ -3,7 +3,7 @@
 @section('container')
     <section>
         <h2>{{ $post->title }}</h2>
-        <h5>{{ $post->author }}</h5>
+        <h3>by Caknooo in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> </h3>
         {!! $post->body !!}
     </section>
 
