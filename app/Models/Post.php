@@ -16,6 +16,7 @@ class Post extends Model
     // Guarded bertujuan untuk memasukkan data selain dengan nama yang dimasukkan
     // ex : masukkan smua data ke kolom yang ada kecuali ID
     protected $guarded = ['id'];
+    protected $with = ['author', 'category'];
 
     // Relasi one to one terhadap class category
     public function category(){

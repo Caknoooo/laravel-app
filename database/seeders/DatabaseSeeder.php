@@ -32,13 +32,18 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
                     
         Category::create([
-            'name' => 'Cakno Programming',
-            'slug' => 'cakno-programming'
+            'name' => 'Programming',
+            'slug' => 'programming'
         ]);
         
         Category::create([
-            'name' => 'Programming',
-            'slug' => 'programming'
+            'name' => 'Personal',
+            'slug' => 'personal'
+        ]);
+
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
         ]);
 
         Post::factory(20)->create();
