@@ -9,9 +9,11 @@ class PostController extends Controller
 {
     public function index(){
         return view('posts', [
-            "title" => "Posts",
+            "title" => "All Posts",
             //"posts" => Post::all(),
-            "posts" => Post::latest()->get()
+
+            // Menggunakan Eager Loading dengan tujuan untuk reduce "N + 1" Problem
+            "posts" => Post::with(['author', 'category'])->latest()->get()
         ]);
     }
 

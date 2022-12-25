@@ -29,11 +29,6 @@ class DatabaseSeeder extends Seeder
                 //     'password' => bcrypt('12345')
                 // ]);
                 
-                // User::create([
-                    //     'name' => 'Clarissa',
-                    //     'email' => 'clrsluna@gmail.com',
-                    //     'password' => bcrypt('12345')
-                    // ]);
         User::factory(5)->create();
                     
         Category::create([
@@ -42,8 +37,8 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Category::create([
-            'name' => 'Luna Programming',
-            'slug' => 'luna-programming'
+            'name' => 'Programming',
+            'slug' => 'programming'
         ]);
 
         Post::factory(20)->create();
