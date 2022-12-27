@@ -8,7 +8,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        'active' => 'home'
     ]);
 });
 
@@ -16,6 +17,7 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         "name" => "Caknoo",
+        'active' => 'home',
         "email" => "caknocomel@gmail.com",
         "jurusan" => "Teknik Informatika",
         "image" => "Cakno.jpeg"
@@ -27,16 +29,6 @@ Route::get('/posts', [PostController::class, 'index']);
 // Halaman single post
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-// Halaman category relationship / Single Category
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('posts', [
-        'title' => "Post by Categories : $category->name",
-        'active' => 'categories',
-        // Menggunakan Lazy Eager Loading
-        'posts' => $category->posts->load(['author', 'category']),
-    ]);
-});
-
 // Categories
 Route::get('/categories', function(){
     return view('categories', [
@@ -46,11 +38,22 @@ Route::get('/categories', function(){
     ]);
 });
 
-Route::get('/authors/{author:username}', function(User $author){
-    return view('posts', [
-        'title' => "Post by Author : $author->name",
+// Halaman category relationship / Single Category
+// Route::get('/categories/{category:slug}', function(Category $category){
+//     return view('posts', [
+//         'title' => "Post by Categories : $category->name",
+//         'active' => 'categories',
+//         // Menggunakan Lazy Eager Loading
+//         'posts' => $category->posts->load(['author', 'category']),
+//     ]);
+// });
 
-        // Menggunakan Lazy Eager Loading
-        'posts' => $author->posts->load(['category', 'author'])
-    ]);
-});
+// Route::get('/authors/{author:username}', function(User $author){
+//     return view('posts', [
+//         'title' => "Post by Author : $author->name",
+//         'author' => 'posts',
+
+//         // Menggunakan Lazy Eager Loading
+//         'posts' => $author->posts->load(['category', 'author'])
+//     ]);
+// });
