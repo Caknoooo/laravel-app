@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Post;
 use App\Models\Category;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('home', [
@@ -38,22 +38,6 @@ Route::get('/categories', function(){
     ]);
 });
 
-// Halaman category relationship / Single Category
-// Route::get('/categories/{category:slug}', function(Category $category){
-//     return view('posts', [
-//         'title' => "Post by Categories : $category->name",
-//         'active' => 'categories',
-//         // Menggunakan Lazy Eager Loading
-//         'posts' => $category->posts->load(['author', 'category']),
-//     ]);
-// });
+Route::get('/login', [LoginController::class, 'index']);
 
-// Route::get('/authors/{author:username}', function(User $author){
-//     return view('posts', [
-//         'title' => "Post by Author : $author->name",
-//         'author' => 'posts',
-
-//         // Menggunakan Lazy Eager Loading
-//         'posts' => $author->posts->load(['category', 'author'])
-//     ]);
-// });
+Route::get('/register', [RegisterController::class, 'index']);
