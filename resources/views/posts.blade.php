@@ -37,8 +37,8 @@
         <div class="row">
             @foreach($posts->skip(1) as $post)
                 <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card"">
+                    <div class="card h-100">
+                        <div class="card-body">
                             <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.5)">
                                 <a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a>
                             </div>
@@ -48,8 +48,7 @@
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p><small class="text-muted">By. <a href="/posts?author={{ $post->author->username  }}" class="text-decoration-none">{{ $post->author->name }} </a> {{ $post->created_at->diffForHumans() }} </small></p>
                                 <p class="card-text">{{ $post->excerpt }}</p>
-                                <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More</a>
-                    
+                                <a href="/posts/{{ $post->slug }}" class="btn btn-lg btn-block btn-primary mt-auto">Read More</a>
                             </div>
                         </div>
                     </div>
