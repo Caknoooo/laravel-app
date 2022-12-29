@@ -15,7 +15,7 @@
                 {!! $post->body !!}
             </article>
             
-            <a class="btn btn-primary mt-3 " href="/posts" role="button">Back</a>
+            {{-- <a class="btn btn-primary mt-3 " href="/posts" role="button">Back</a> --}}
         </div>
     </div>
 </div>
