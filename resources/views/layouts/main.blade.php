@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
 
-    <title>Caknoo Blog | {{ $title }}</title>
+    <title>My Blog | {{ $title }}</title>
   </head>
   <body>
     @include('partials.navbar')
